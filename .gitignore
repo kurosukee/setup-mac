@@ -1,0 +1,7 @@
+packages/*
+config/*
+dotfiles/*
+
+!packages/.gitkeep
+!config/.gitkeep
+!dotfiles/.gitkeep
