@@ -97,8 +97,8 @@ echo "システム設定を適用しています..."
 # 拡張子を表示
 # defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# 隠しファイルを表示
-# defaults write com.apple.finder AppleShowAllFiles -bool true
+# 隠しファイルを表示　※注意：有効にするとPCの動作が重くなる可能性があります
+# defaults write com.apple.finder AppleShowAllFiles -bool false
 
 # パスバーを表示
 # defaults write com.apple.finder ShowPathbar -bool true
@@ -113,17 +113,17 @@ echo "システム設定を適用しています..."
 # mkdir -p ~/Screenshots
 # defaults write com.apple.screencapture location -string "~/Screenshots"
 
-# トラックパッドの移動速度（0.0〜3.0、デフォルトは0.875）
-# defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3.0
+# トラックパッドの移動速度（0.0〜3.0、デフォルトは0.875、推奨範囲は0.5〜2.0）※注意：早いとPCの動作が重くなる可能性があります
+# defaults write NSGlobalDomain com.apple.trackpad.scaling -float 2.0
 
-# トラックパッドのスクロール速度（0.0〜3.0、デフォルトは0.875）
-# defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 3.0
+# トラックパッドのスクロール速度（0.0〜3.0、デフォルトは0.875、推奨範囲は0.3〜1.5）※注意：早いとPCの動作が重くなる可能性があります
+# defaults write NSGlobalDomain com.apple.scrollwheel.scaling -float 1.5
 
 # トラックパッドのクリック感度（0〜2、0=軽い、2=しっかり）
 # defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 # defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 
-# マウスの移動速度（-1.0〜3.0、デフォルトは2.5）
+# マウスの移動速度（-1.0〜3.0、デフォルトは2.5、推奨範囲は1.0〜3.0）※注意：早いとPCの動作が重くなる可能性があります
 # defaults write NSGlobalDomain com.apple.mouse.scaling -float 3.0
 
 # マウスのスクロール速度（0.0〜3.0、デフォルトは0.875）
@@ -132,9 +132,10 @@ echo "システム設定を適用しています..."
 # マウスのダブルクリック間隔（ミリ秒、デフォルトは500）
 # defaults write NSGlobalDomain com.apple.mouse.doubleClickThreshold -float 0.5
 
-# キーのリピート速度を高速化
-# defaults write NSGlobalDomain KeyRepeat -int 2
-# defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# キーのリピート速度を高速化（120〜2、デフォルトは6、推奨範囲は2:30ms,6:100ms,12:200ms,120:2000ms）※注意：早いとPCの動作が重くなる可能性があります
+# defaults write NSGlobalDomain KeyRepeat -int 12
+# キーのリピート速度を高速化（120〜15、デフォルトは25、推奨範囲は15:225ms,25:375ms,35:525ms,120:1800ms）※注意：早いとPCの動作が重くなる可能性があります
+# defaults write NSGlobalDomain InitialKeyRepeat -int 35
 
 # メニューバーを自動的に隠す
 # defaults write NSGlobalDomain _HIHideMenuBar -bool true
