@@ -27,8 +27,6 @@ create_brewfile() {
 # Homebrewでインストールするパッケージを指定
 # Usage: brew bundle --file=packages/Brewfile
 
-# tap "homebrew/cask"
-
 # 基本的なCLIツール
 # brew "git"
 # brew "curl"
@@ -49,6 +47,7 @@ create_brewfile() {
 # brew "python@3.11"
 
 # GUIアプリケーション
+# cask "google-japanese-ime"
 # cask "google-chrome"
 # cask "iterm2"
 # cask "alfred"
@@ -165,8 +164,8 @@ echo "システム設定を適用しています..."
 echo "システム設定の適用が完了しました"
 
 # 設定を反映
-killall Dock 2>/dev/null || true
-killall Finder 2>/dev/null || true
+# killall Dock 2>/dev/null || true
+# killall Finder 2>/dev/null || true
 EOF
         
         chmod +x config/system_preferences.sh
@@ -202,14 +201,6 @@ if command -v node >/dev/null 2>&1; then
     # npm install -g @anthropic-ai/claude-code
 fi
 
-# claude（必要な場合）
-if command -v claude >/dev/null 2>&1; then
-    echo "claude version: $(claude --version)"
-    
-    # 設定変更
-    # claude config set --global preferredNotifChannel terminal_bell
-fi
-
 # Python（必要な場合）
 if command -v python3 >/dev/null 2>&1; then
     echo "Python3 version: $(python3 --version)"
@@ -227,6 +218,11 @@ fi
 #     eval "$(ssh-agent -s)"
 #     ssh-add ~/.ssh/id_rsa
 # fi
+
+＃oh my zshの設定
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# zshを再起動
+# exec zsh
 
 echo "開発環境のセットアップが完了しました"
 EOF

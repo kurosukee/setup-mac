@@ -45,7 +45,7 @@ chmod +x setup_template.sh
 `config/dev_setup.sh` を編集してください。
 
 ### dotfiles の追加
-`dotfiles/` ディレクトリに設定ファイルを追加してください。
+`dotfiles/` ディレクトリの設定ファイルを必要に応じて追加・変更・削除してください。
 
 ## 初期構築実行
 
